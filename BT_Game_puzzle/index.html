@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game puzzle</title>
+</head>
+<body>
+<center>
+    <p id="result"></p>
+    <img src="./img/img1.jfif" style="width: 395px; height: 225px" alt="img" id="img1" onclick="change(id)"><br>
+    <img src="./img/img2.jfif" style="width: 395px; height: 225px" alt="img" id="img2" onclick="change(id)"><br>
+    <img src="./img/img3.jfif" style="width: 395px; height: 225px" alt="img" id="img3" onclick="change(id)">
+</center>
+<!--Js-->
+<script>
+    let a = 1;
+    function change(id) {
+        a++;
+        if(a>3) {
+            a = 1;
+        }
+        document.getElementById(id).src = `./img/img${a}.jfif`;
+        let img1 = document.querySelector('#img1').src;
+        let img2 = document.querySelector('#img2').src;
+        let img3 = document.querySelector('#img3').src;
+        if (img1 == img2 && img2 == img3) {
+            document.querySelector("#result").innerHTML = "WINNN!"
+        } else {
+            document.querySelector("#result").innerHTML = ""
+        }
+    }
+
+</script>
+</body>
+</html>

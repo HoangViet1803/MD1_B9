@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+</head>
+<style>
+  td {
+    text-align: center;
+  }
+
+  input {
+    width: 100%;
+  }
+</style>
+<body>
+<table style="border: 1px solid black; width: 400px; height: 200px">
+  <tr>
+    <td colspan="4" style="text-align: left">
+      <p id="result">0</p>
+    </td>
+  </tr>
+  <tr>
+    <td><input type="button" value="(" id="(" onclick="display('(')"></td>
+    <td><input type="button" value=")" id=")" onclick="display(')')"></td>
+    <td><input type="button" value="%" id="%" onclick="display('%')"></td>
+    <td><input type="button" value="AC" id="AC" onclick="dele()"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="7" id="7" onclick="display('7')"></td>
+    <td><input type="button" value="8" id="8" onclick="display('8')"></td>
+    <td><input type="button" value="9" id="9" onclick="display('9')"></td>
+    <td><input type="button" value="/" id="/" onclick="display('/')"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="4" id="4" onclick="display('4')"></td>
+    <td><input type="button" value="5" id="5" onclick="display('5')"></td>
+    <td><input type="button" value="6" id="6" onclick="display('6')"></td>
+    <td><input type="button" value="*" id="*" onclick="display('*')"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="1" id="1" onclick="display('1')"></td>
+    <td><input type="button" value="2" id="2" onclick="display('2')"></td>
+    <td><input type="button" value="3" id="3" onclick="display('3')"></td>
+    <td><input type="button" value="-" id="-" onclick="display('-')"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="0" id="0" onclick="display('0')"></td>
+    <td><input type="button" value="." id="." onclick="display('.')"></td>
+    <td><input type="button" value="=" id="=" onclick="cal()"></td>
+    <td><input type="button" value="+" id="+" onclick="display('+')"></td>
+  </tr>
+</table>
+<script>
+  let expressiton =''
+  function display(id) {
+    let inp = document.getElementById(id).value;
+    expressiton += inp;
+    document.querySelector('#result').innerHTML = expressiton;
+  }
+  function cal() {
+    let ketQua = eval(expressiton);
+    document.querySelector('#result').innerHTML = ketQua;
+    expressiton = ketQua;
+  }
+  function dele() {
+    document.querySelector('#result').innerHTML = '0';
+    expressiton = '';
+  }
+</script>
+</body>
+</html>

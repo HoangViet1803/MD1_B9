@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do You Love Me</title>
+</head>
+<style>
+  button {
+    cursor: pointer;
+  }
+</style>
+<body>
+<center>
+  <h1>Do you love me?</h1>
+  <button id="yes">YES</button>
+  <button id="no" style="position: absolute">NO</button>
+  <p id="ans"></p>
+</center>
+<!--JS-->
+<script>
+document.querySelector('#yes').addEventListener('click',function() {
+  document.querySelector("#ans").innerHTML ="Ỏ <3"
+})
+document.querySelector('#no').addEventListener('mouseover', function() {
+  document.querySelector('#no').style.top = Math.floor(Math.random() * window.innerHeight) + 'px';
+  document.querySelector('#no').style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+})
+</script>
+</body>
+</html>
